@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --font-coiny: 'Coiny', cursive;
+    --background: 50 8.3% 95.1%; /* Corresponding HSL for #f2f3f0 */
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 217 91% 59%; /* Saturated blue #4285F4 */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 90%; /* Adjusted for slightly darker secondary */
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 90%; /* Adjusted for slightly darker muted */
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 258 92% 76%; /* Vibrant violet #A78BFA */
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 47.4% 11.2%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 50 8.3% 95.1%; /* HSL for #f2f3f0 */
+    --sidebar-foreground: 222.2 47.4% 11.2%;
+    --sidebar-primary: 222.2 47.4% 11.2%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217 91% 59%; /* Saturated blue #4285F4 */
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 258 92% 76%; /* Vibrant violet #A78BFA */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 217 91% 59%; /* Primary color for rings */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html, body, #__next {
+    @apply h-full;
+  }
+  body {
+    @apply bg-background text-foreground flex flex-col;
+  }
+}
+
+/* React DayPicker Custom Styles */
+.react-day-picker-custom {
+  width: 100% !important;
+}
+
+.react-day-picker-custom .rdp-month {
+  width: 100% !important;
+}
+
+.react-day-picker-custom .rdp-caption {
+  display: flex;
+  justify-content: center !important;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #1F2937; /* gray-800 */
+}
+
+.react-day-picker-custom .rdp-weekdays, 
+.react-day-picker-custom .rdp-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr) !important;
+  width: 100% !important;
+}
+
+.react-day-picker-custom .rdp-weekday, 
+.react-day-picker-custom .rdp-day {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  text-align: center !important; /* Center the text within the cells */
+}
+
+.react-day-picker-custom .rdp-weekday {
+  color: #6B7280; /* gray-500 */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.react-day-picker-custom .rdp-day {
+  color: #1F2937; /* gray-800 */
+  /* Add padding or height if needed for square cells */
+  /* padding: 0.5rem; */
+  /* aspect-ratio: 1 / 1; */
+}
+
+.react-day-picker-custom .rdp-day_today {
+  font-weight: bold;
+}
+
+.react-day-picker-custom .rdp-day_selected {
+  background-color: #E3F463; /* booger-buster */
+  color: #043736; /* rich-green */
+  font-weight: bold;
+}
+
+.react-day-picker-custom .rdp-day_selected:hover {
+  background-color: #D9ED61; /* slightly darker booger-buster */
+}
+
+.react-day-picker-custom .rdp-day_outside {
+  color: #9CA3AF; /* gray-400 */
+}
+
+.react-day-picker-custom .rdp-month {
+  margin: 0 !important;
+}
+
+.react-day-picker-custom .rdp-nav {
+  display: none; /* Hide default navigation buttons */
+}
+
+/* Custom styles for event items in Schedule Campaign */
+.event-item {
+  padding: 0.5rem;
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.event-item p {
+  margin: 0;
+}
+
+.event-item .font-semibold {
+  font-weight: 600;
+}
+
+/* Remove blue tap color on selection */
+::selection {
+  background: transparent; /* Set background to transparent */
+  color: inherit; /* Keep the original text color */
+}
+
+/* For older Firefox versions */
+::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
